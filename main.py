@@ -46,6 +46,7 @@ def save_output_to_file(outputs):
 
 # Streamlit UI
 st.title("Code Generator")
+st.write("Lets start")
 
 # Input from the user
 num_to_generate = st.number_input("Enter the number of codes to generate:", min_value=1, value=1)
