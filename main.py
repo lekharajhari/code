@@ -1,16 +1,16 @@
 import streamlit as st
-from pages import page1, page2
+from pages import home, about, contact  # Import pages
 
-# Dictionary to map page names to functions
-PAGES = {
-    "Page 1": page1,
-    "Page 2": page2
-}
+def main():
+    st.sidebar.title("Navigation")
+    page = st.sidebar.selectbox("Choose a page", ["Home", "About", "Contact"])
 
-# Streamlit app layout
-st.sidebar.title("Navigation")
-selection = st.sidebar.radio("Go to", list(PAGES.keys()))
+    if page == "Home":
+        home.show()
+    elif page == "About":
+        about.show()
+    elif page == "Contact":
+        contact.show()
 
-# Call the selected page's function
-page = PAGES[selection]
-page.run()
+if __name__ == "__main__":
+    main()
