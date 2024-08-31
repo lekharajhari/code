@@ -1,5 +1,5 @@
 import streamlit as st
-from pages import home, about, contact  # Import pages
+from pages import home
 
 def main():
     st.sidebar.title("Navigation")
