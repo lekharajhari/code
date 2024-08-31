@@ -13,8 +13,11 @@ def generate_code():
 def generate_expiration_date():
     """Generate an expiration date in the format MM|YYYY"""
     current_year = datetime.now().year
-    year = random.randint(current_year, 2032)
-    month = random.randint(1, 12)
+    year = random.randint(current_year, 2028)
+    if year==2024:
+        month= random.randint(10, 12)
+    else:
+        month = random.randint(1, 12)
     return f"{month:02d}|{year}"
 
 # Function to generate a random 3-digit number
@@ -42,7 +45,7 @@ def save_output_to_file(outputs):
     return filename, file_content
 
 # Streamlit UI
-st.title("Random Code Generator")
+st.title("Code Generator")
 
 # Input from the user
 num_to_generate = st.number_input("Enter the number of codes to generate:", min_value=1, value=1)
